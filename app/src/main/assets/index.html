@@ -1,0 +1,48 @@
+<html>
+<head>
+    <script type="text/javascript">
+
+        function addSomething(a,b){
+            return a + b;
+            console.log('log from javascript');
+        }
+
+        function changeText(){
+            document.getElementById('test1').innerHTML = 'Good Morning';
+        }
+
+        function loadImage() {
+
+        	var path = "/storage/emulated/0/Download/search.png";
+        	var image = document.createElement('img');
+        	image.src = path;
+        	document.body.appendChild(image);
+        	console.log("image loaded");
+        }
+        
+        function testSync() {
+        	var string = "default string";
+        	string = window.MyHandler.testString();
+        	document.getElementById('test1').innerHTML = string;
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+
+<input type="button" onclick="window.MyHandler.setResult(9999)"  style="height:100px; white-space: normal;text-align:left;"
+       value="BOUTTON HTML" />     <br/>
+
+<input type="button" onclick="window.MyHandler.calcSomething(2,2)"  style="height:100px; white-space: normal;text-align:left;background:green"
+       value="BTN HTML" />     <br/>
+       
+<input type="button" onclick="window.testSync()"  style="height:100px; white-space: normal;text-align:left;"
+       value="DE JS EN JAVA NATIF" />     <br/>
+
+<h1 id="test1">Hello World</h1>
+
+</body>
+</html>
